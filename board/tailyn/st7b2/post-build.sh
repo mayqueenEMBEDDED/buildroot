@@ -12,6 +12,14 @@ GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 
 rm -rf "${GENIMAGE_TMP}"
 
+genimage \
+  --rootpath "${TARGET_DIR}" \
+  --tmppath "${GENIMAGE_TMP}" \
+  --inputpath "${BINARIES_DIR}" \
+  --outputpath "${BINARIES_DIR}" \
+  --config "${GENIMAGE_CFG}"
+
 # copy the NAT relative functions to rootfs
-cp -a "${BOARD_DIR}/rootfs-additions/udhcpd_eth1.conf" "${TARGETDIR}/etc/udhcpd_eth1.conf"
-cp -a "${BOARD_DIR}/rootfs-additions/eth1_nat.sh" "${TARGETDIR}/usr/bin/eth1_nat.sh"
+cp ${BOARD_DIR}/rootfs-additions/udhcpd_eth1.conf ${TARGETDIR}/etc/udhcpd_eth1.conf
+cp ${BOARD_DIR}/rootfs-additions/eth1_nat.sh ${TARGETDIR}/usr/bin/eth1_nat.sh
+
