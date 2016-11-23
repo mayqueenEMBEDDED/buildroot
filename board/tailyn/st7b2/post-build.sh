@@ -20,6 +20,6 @@ genimage \
   --config "${GENIMAGE_CFG}"
 
 # copy the NAT relative functions to rootfs
-cp ${BOARD_DIR}/rootfs-additions/udhcpd_eth1.conf ${TARGETDIR}/etc/udhcpd_eth1.conf
-cp ${BOARD_DIR}/rootfs-additions/eth1_nat.sh ${TARGETDIR}/usr/bin/eth1_nat.sh
+cp ${BOARD_DIR}/rootfs-additions/udhcpd_eth1.conf ${TARGET_DIR}/etc/udhcpd_eth1.conf
+cp ${BOARD_DIR}/rootfs-additions/eth1_nat.sh ${TARGET_DIR}/usr/bin/eth1_nat.sh
 
